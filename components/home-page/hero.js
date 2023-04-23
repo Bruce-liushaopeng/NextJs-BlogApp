@@ -7,8 +7,8 @@ function Hero() {
       <div className={classes.image}>
         <Image
           src="/images/site/bruce-profile.png"
-          width={300}
-          height={300}
+          width={500}
+          height={500}
           alt="image showing bruce"
         />
       </div>
