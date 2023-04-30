@@ -1,6 +1,8 @@
+import PostContent from "../../components/posts/post-detail/post-content";
+
 function SinglePostPage() {
   return (
-    <div>SinglePostPage</div>
+    <PostContent />
   )
 }
 
