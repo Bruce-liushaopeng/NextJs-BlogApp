@@ -46,5 +46,3 @@ function MyPage({ data }) {
 }
 ```
 ![routing](nextjs-file-based-routing.png)
-
-server

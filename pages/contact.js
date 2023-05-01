@@ -1,6 +1,8 @@
+import ContactForm from "../components/contact/contact-form"
+
 function ContactPage() {
   return (
-    <div>contact</div>
+    <ContactForm />
   )
 }
 
