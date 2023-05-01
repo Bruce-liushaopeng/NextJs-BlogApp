@@ -1,30 +1,54 @@
+import { MongoClient } from "mongodb";
 
 // handle the user requst to the endpoint of 'api/contact'
-function handler(req, res) {
+async function handler(req, res) {
   if (req.method === "POST") {
     // collection information from the body
     const { email, name, message } = req.body;
 
     if (
       !email ||
-      !email.include("@") ||
+      !email.includes("@") ||
       !name ||
       name.trim() === "" ||
       !message ||
       message.trim() === ""
     ) {
-        res.status(422).json({ message: 'Invalid input' });
+      res.status(422).json({ message: "Invalid input" });
+      return;
+    }
+
+    let client;
+    // store in a database
+    const newMessage = {
+      email,
+      name,
+      message,
+    };
+    try{
+        // the primaryclient is set with the role that can Read&Write any database
+        client = await MongoClient.connect('mongodb+srv://primaryclient:ppclient@cluster0.lhbqrpk.mongodb.net/my-site?retryWrites=true&w=majority')
+    } catch(error) {
+        res.status(500).json({message: 'could not connect to database'})
+        return 
+    }
+    // we can switch another db when we do the following
+    // const db = client.db('another db')
+    const db = client.db();
+    try{
+        const result = await db.collection('messages').insertOne(newMessage); // create if not exist 
+        newMessage.id = result.insertedId; // we can access to the auto generated id
+    } catch (error) {
+        client.close();
+        res.status(500).json({message: "error when connect to DB collection"});
         return;
     }
 
-    // store in a database
-    const newMessage = {
-        email,
-        name, 
-        message
-    };
-
-    console.log(newMessage);
+    client.close();
+    res
+      .status(201)
+      .json({ message: "successfully stored message", newMessage: newMessage });
+    return;
   }
 }
 
