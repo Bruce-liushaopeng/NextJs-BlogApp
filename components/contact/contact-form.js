@@ -28,7 +28,6 @@ function ContactForm() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setRequestStatus("");
-      setEnteredMessage("");
     }, 3000);
 
     return () => clearTimeout(timer);
