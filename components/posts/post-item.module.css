@@ -16,13 +16,6 @@
   overflow: hidden;
 }
 
-.imageDiv {
-  height: 260px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .image img {
   object-fit: cover;
 }
