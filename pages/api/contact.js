@@ -26,8 +26,9 @@ async function handler(req, res) {
       message,
     };
     try{
-        // the primaryclient is set with the role that can Read&Write any database
         client = await MongoClient.connect('mongodb+srv://primaryclient:ppclient@cluster0.lhbqrpk.mongodb.net/my-site?retryWrites=true&w=majority')
+        
+        
     } catch(error) {
         res.status(500).json({message: 'could not connect to database'})
         return 
