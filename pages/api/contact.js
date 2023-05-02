@@ -31,7 +31,7 @@ async function handler(req, res) {
     try {
       client = await MongoClient.connect(connectionString);
     } catch (error) {
-      res.status(500).json({ message: "could not connect to database" });
+      res.status(500).json({ message: "could not connect to database" + connectionString });
       return;
     }
     // we can switch another db when we do the following
