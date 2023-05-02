@@ -11,7 +11,6 @@ function ContactPage() {
       </Head>
       <ContactForm />
     </Fragment>
-    
   )
 }
 
