@@ -24,7 +24,7 @@ Maven is a powerful build automation tool for Java projects that provides a unif
 
 To use Maven in a project, you need to create a POM file that describes the project's configuration and dependencies. The POM file should be placed in the root directory of the project.
 
-You can then use the `mvn` command-line tool to execute various tasks, such as building the project, running tests, generating documentation, and packaging the project into a JAR or WAR file.
+You can then use the mvn command-line tool to execute various tasks, such as building the project, running tests, generating documentation, and packaging the project into a JAR or WAR file.
 
 Maven also integrates with many popular IDEs, such as Eclipse and IntelliJ IDEA, making it easy to use in a development environment.
 
