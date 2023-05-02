@@ -6,6 +6,7 @@ import Head from "next/head";
 
 
 function HomePage(props) {
+  console.log("testing value expected from vercel: " + process.env.test)
   return (
     <Fragment>
       <Head>
