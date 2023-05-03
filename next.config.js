@@ -7,17 +7,17 @@ module.exports = (phase) => {
     if(phase === PHASE_DEVELOPMENT_SERVER) {
         return {
             env: {
-                mongodb_username: "primaryclient",
-                mongodb_password: "ppclient",
-                mongodb_cluster: "cluster0",
-                mongodb_database: "my-site-dev"
+                NEXT_PUBLIC_MONGODB_USERNAME: "primaryclient",
+                NEXT_PUBLIC_MONGODB_PASSWORD: "ppclient",
+                NEXT_PUBLIC_MONGODB_CLUSTER: "cluster0",
+                NEXT_PUBLIC_MONGODB_DATABASE: "my-site-dev"
             }
         }
     }
     // down here, means we are not in development server
     return {
         env: {
-            SERVER: process.env.SERVER,
+            SERVER: "place_holder",
         }
     }
 }
