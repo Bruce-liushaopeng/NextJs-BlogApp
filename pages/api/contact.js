@@ -26,7 +26,7 @@ async function handler(req, res) {
       message,
     };
 
-    const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_cluster}.lhbqrpk.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`;
+    const connectionString = `mongodb+srv://${process.env.NEXT_PUBLIC_MONGODB_USERNAME}:${process.env.mongodb_password}@${process.env.mongodb_cluster}.lhbqrpk.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`;
     console.log(connectionString)
     try {
       client = await MongoClient.connect(connectionString);

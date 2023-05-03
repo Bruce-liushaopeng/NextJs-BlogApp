@@ -17,10 +17,7 @@ module.exports = (phase) => {
     // down here, means we are not in development server
     return {
         env: {
-            mongodb_username: "temp",
-            mongodb_password: "ppclient",
-            mongodb_cluster: "cluster0",
-            mongodb_database: "my-site"
+            SERVER: process.env.SERVER,
         }
     }
 }
